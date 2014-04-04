@@ -1,10 +1,14 @@
-// Generated on 2014-04-04 using generator-ember 0.8.3
 'use strict';
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
+
+//Load the configuration for a task from the tasks directory
+function loadConfig(name){
+    return require('./tasks/'+name);
+}
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -106,18 +110,7 @@ module.exports = function (grunt) {
             },
             server: '.tmp'
         },
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
-            },
-            all: [
-                'Gruntfile.js',
-                '<%= yeoman.app %>/scripts/{,*/}*.js',
-                '!<%= yeoman.app %>/scripts/vendor/*',
-                'test/spec/{,*/}*.js'
-            ]
-        },
+        jshint: loadConfig('jshint'),
         mocha: {
             all: {
                 options: {
