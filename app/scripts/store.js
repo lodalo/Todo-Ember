@@ -1,0 +1,1 @@
+WidgetTodo.ApplicationAdapter = DS.FixtureAdapter;
