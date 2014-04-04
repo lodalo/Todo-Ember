@@ -134,7 +134,7 @@ module.exports = function (grunt) {
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
                 fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: 'app/bower_components',
+                importPath: 'app/vendor',
                 httpImagesPath: '/images',
                 httpGeneratedImagesPath: '/images/generated',
                 httpFontsPath: '/styles/fonts',
@@ -238,8 +238,8 @@ module.exports = function (grunt) {
           app: {
             options: {
               variables: {
-                ember: 'bower_components/ember/ember.js',
-                emberData: 'bower_components/ember-data/ember-data.js'
+                ember: 'vendor/ember/ember.js',
+                emberData: 'vendor/ember-data/ember-data.js'
               }
             },
             files: [
@@ -249,8 +249,8 @@ module.exports = function (grunt) {
           dist: {
             options: {
               variables: {
-                ember: 'bower_components/ember/ember.prod.js',
-                emberData: 'bower_components/ember-data/ember-data.prod.js'
+                ember: 'vendor/ember/ember.prod.js',
+                emberData: 'vendor/ember-data/ember-data.prod.js'
               }
             },
             files: [
@@ -266,7 +266,7 @@ module.exports = function (grunt) {
                         expand: true,
                         flatten: true,
                         filter: 'isFile',
-                        cwd: '<%= yeoman.app %>/bower_components/',
+                        cwd: '<%= yeoman.app %>/vendor/',
                         dest: '<%= yeoman.app %>/styles/fonts/',
                         src: [ 
                             'bootstrap-sass/dist/fonts/**', // Bootstrap
