@@ -37,7 +37,7 @@ module.exports = function (grunt) {
             },
             neuter: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-                tasks: ['neuter']
+                tasks: ['jshint','neuter']
             },
             livereload: {
                 options: {
@@ -239,7 +239,7 @@ module.exports = function (grunt) {
             options: {
               variables: {
                 ember: 'bower_components/ember/ember.js',
-                ember_data: 'bower_components/ember-data/ember-data.js'
+                emberData: 'bower_components/ember-data/ember-data.js'
               }
             },
             files: [
@@ -250,7 +250,7 @@ module.exports = function (grunt) {
             options: {
               variables: {
                 ember: 'bower_components/ember/ember.prod.js',
-                ember_data: 'bower_components/ember-data/ember-data.prod.js'
+                emberData: 'bower_components/ember-data/ember-data.prod.js'
               }
             },
             files: [
@@ -346,6 +346,7 @@ module.exports = function (grunt) {
         }
 
         grunt.task.run([
+            'jshint',
             'clean:server',
             'replace:app',
             'concurrent:server',

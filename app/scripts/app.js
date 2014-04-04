@@ -1,3 +1,4 @@
+/*jshint unused:false */
 var WidgetTodo = window.WidgetTodo = Ember.Application.create();
 
 /* Order and include as you please. */
