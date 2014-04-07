@@ -1,3 +1,8 @@
-WidgetTodo.Router.map(function () {
-  // Add your routes here
+/*global Todos */
+'use strict';
+Todos.Router.map(function () {
+    this.resource('todos', { path: '/' }, function () {
+        this.route('active');
+        this.route('completed');
+    });
 });
