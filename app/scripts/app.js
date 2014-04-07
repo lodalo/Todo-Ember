@@ -1,6 +1,8 @@
 /*global Ember, DS, Todos:true */
 /*jshint unused:false */
-window.Todos = Ember.Application.create();
+window.Todos = Ember.Application.create({
+    rootElement: '#wnp-widget-todo'
+});
 
 /* Order and include as you please. */
 require('scripts/controllers/*');
