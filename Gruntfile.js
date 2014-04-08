@@ -374,6 +374,20 @@ module.exports = function (grunt) {
         'usemin'
     ]);
 
+    grunt.registerTask('buildwidget', [
+        'clean:dist',
+        'replace:dist',
+        'useminPrepare',
+        'concurrent:dist',
+        'neuter:app',
+        'concat',
+        'cssmin',
+        'uglify',
+        'copy',
+        //'rev',
+        'usemin'
+    ]);
+
     grunt.registerTask('default', [
         'jshint',
         'test',
