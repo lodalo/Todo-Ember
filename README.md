@@ -2,4 +2,4 @@ Todo-Ember
 ==========
 
 Ember Todo App following the Todo MVC example. 
-Uses our custom project layout and includes all dependencies (we are experimenting with a build process that works offline).
+Uses our custom project layout and split the Gruntfile config into multiple files in tasks/options.
