@@ -2,6 +2,4 @@ temp
 .sass-cache
 .tmp
 dist
-#We store all the dependencies to use in our offline build process, we ignore dist BUT...
-#Don't ignore any dist folder inside our dependencies
-!node_modules/**
+node_modules
